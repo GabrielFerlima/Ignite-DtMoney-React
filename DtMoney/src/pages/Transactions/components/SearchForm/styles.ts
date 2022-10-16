@@ -34,8 +34,14 @@ button {
     color: ${probs => probs.theme['green-300']};
     font-weight: bold;
     border-radius: 6px;
+    cursor: pointer;
 
-    :hover{
+    &:disabled{
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+
+    :not(:disabled):hover{
         background: ${probs => probs.theme['green-500']};
         border-color: 1px solid ${probs => probs.theme['green-500']};
         color: ${probs => probs.theme.white};
