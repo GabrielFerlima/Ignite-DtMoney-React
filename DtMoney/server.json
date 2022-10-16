@@ -24,6 +24,14 @@
         "category": "Dispesas",
         "price": 400,
         "createAt": "2022-11-12T20:24:44.518Z"
+    },
+      {
+        "id": 4,
+        "description": "Atendimento Fisioterapia",
+        "type": "income",
+        "category": "Serviços",
+        "price": 1200,
+        "createAt": "2022-12-12T20:24:44.518Z"
     }
   ] 
 
