@@ -1,16 +1,17 @@
-import { useContext, useEffect, useState } from "react";
-import { Header } from "../../components/Header";
-import { Summary } from "../../components/Header/Summary";
-import { TransactionsContext } from "../../contexts/TransactionsContext";
-import { dateFormatter, priceFormatter } from "../../utils/formatter";
-import { SeachForm } from "./components/SearchForm";
-import { PriceHighlight, TransactionsContainer, TransactionsTable } from "./styles";
-
-
-
+import { useContext, useEffect, useState } from 'react'
+import { Header } from '../../components/Header'
+import { Summary } from '../../components/Header/Summary'
+import { TransactionsContext } from '../../contexts/TransactionsContext'
+import { dateFormatter, priceFormatter } from '../../utils/formatter'
+import { SeachForm } from './components/SearchForm'
+import {
+  PriceHighlight,
+  TransactionsContainer,
+  TransactionsTable,
+} from './styles'
 
 export function Transactions() {
-  const {transactions} = useContext(TransactionsContext)
+  const { transactions } = useContext(TransactionsContext)
   return (
     <div>
       <Header />
@@ -20,7 +21,7 @@ export function Transactions() {
         <SeachForm />
         <TransactionsTable>
           <tbody>
-            {transactions.map(transaction => {
+            {transactions.map((transaction) => {
               return (
                 <tr key={transaction.id}>
                   <td width="50%">{transaction.description}</td>
@@ -31,15 +32,15 @@ export function Transactions() {
                     </PriceHighlight>
                   </td>
                   <td>{transaction.category}</td>
-                  <td>{dateFormatter.format(new Date(transaction.createAt))}</td>
+                  <td>
+                    {dateFormatter.format(new Date(transaction.createAt))}
+                  </td>
                 </tr>
               )
             })}
-
           </tbody>
         </TransactionsTable>
       </TransactionsContainer>
-
     </div>
   )
 }
